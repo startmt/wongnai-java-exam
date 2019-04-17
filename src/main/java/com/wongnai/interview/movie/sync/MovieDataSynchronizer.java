@@ -28,6 +28,7 @@ public class MovieDataSynchronizer {
 
 	private void initdatatodb() {
 		ArrayList<MovieData> datas = movieDataService.fetchAll();
+		movieRepository.deleteAll();
 		datas.forEach(
 				movieData -> movieRepository.save(new Movie(movieData.getTitle(), movieData.getCast()))
 		);
