@@ -31,6 +31,11 @@ public class Movie {
 		this.name = name;
 	}
 
+	public Movie(String title, List<String> cast) {
+		this.name = title;
+		this.actors = cast;
+	}
+
 	public Long getId() {
 		return id;
 	}

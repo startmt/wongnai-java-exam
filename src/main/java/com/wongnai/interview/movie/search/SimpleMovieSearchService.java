@@ -31,6 +31,7 @@ public class SimpleMovieSearchService implements MovieSearchService {
             for(String splitText : titleSplit){
                 if(splitText.equals(queryText)){
                     System.out.println(movieData.getTitle());
+                    movieResult.add(new Movie(movieData.getTitle(), movieData.getCast()));
                 }
             }
         }
