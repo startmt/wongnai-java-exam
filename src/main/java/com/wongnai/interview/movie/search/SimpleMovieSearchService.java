@@ -30,7 +30,7 @@ public class SimpleMovieSearchService implements MovieSearchService {
 		    String[] titleSplit = movieData.getTitle().split(" ");
 		    // for in titlesplit
             for(String splitText : titleSplit){
-                if(splitText.equals(queryText)){
+                if(splitText.toLowerCase().equals(queryText.toLowerCase())){
                     System.out.println(movieData.getTitle());
                     movieResult.add(new Movie(movieData.getTitle(), movieData.getCast()));
                 }
