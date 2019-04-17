@@ -24,6 +24,7 @@ public class SimpleMovieSearchService implements MovieSearchService {
 
         //init return value
         ArrayList<Movie> movieResult  = new ArrayList<>();
+
 		//search algorithm
 		for (MovieData movieData : movieDataService.fetchAll()){
 		    String[] titleSplit = movieData.getTitle().split(" ");
