@@ -2,6 +2,7 @@ package com.wongnai.interview.movie.search;
 
 import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.stereotype.Component;
 
@@ -15,10 +16,13 @@ public class InvertedIndexMovieSearchService implements MovieSearchService {
 	@Autowired
 	private MovieRepository movieRepository;
 
+	@Qualifier ("invertedIndexDatabase")
+    @Autowired
+    private Map<String, Set<Long>> wordMap;
 	@Override
 	public List<Movie> search(String queryText) {
 		//TODO: Step 4 => Please implement in-memory inverted index to search movie by keyword.
-		// You must find a way to build inverted index before you do an actual search.
+		// You must find a way to build inverted index before you do an actual search. //success
 		// Inverted index would looks like this:
 		// -------------------------------
 		// |  Term      | Movie Ids      |
