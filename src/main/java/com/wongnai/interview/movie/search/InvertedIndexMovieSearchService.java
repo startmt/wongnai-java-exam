@@ -39,21 +39,28 @@ public class InvertedIndexMovieSearchService implements MovieSearchService {
         // you have to return can be union or intersection of those 2 sets of ids.
         // By the way, in this assignment, you must use intersection so that it left for just movie id 5.
 
+        //init parameter
         String[] queryWords = queryText.toLowerCase().split(" ");
         ArrayList<Long> idList = new ArrayList<>();
         ArrayList<Long> intersecedList = new ArrayList<>();
+
+        //fix bug can't find empty list
         intersecedList.add(null);
+
         //query word in Text
         for (String word : queryWords) {
-            //add id in idList
+
+            //add id's word in idList
             if(wordMap.containsKey(word)){
                 wordMap.get(word).stream().forEach(id -> {
                     idList.add(id);
                 });
             }
         }
+
         for (Long id : idList) {
-            //intersection
+
+            //intersection eg. "star", "war" is same "war", "star"
             if (idList.stream().filter(ids-> ids.equals(id)).count() == queryWords.length) {
                 intersecedList.add(id);
             }

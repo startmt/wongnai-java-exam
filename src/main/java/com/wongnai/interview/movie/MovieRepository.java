@@ -25,9 +25,11 @@ public interface MovieRepository extends CrudRepository<Movie, Long> {
 	@Query("SELECT m FROM Movie m where lower(m.name) LIKE %:keyword%")
 	List<Movie> findByNameContains(@Param("keyword") String keyword);
 
+	//query all data from database (HSQLDB)
 	@Query("SELECT m from Movie m")
     List<Movie> getAllMovie();
 
+	//query data from id in invertedIndexid's list
     @Query("SELECT m from Movie m where (m.id) in (:invertedIndexId)")
     List<Movie> getMovieByIdContains(@Param("invertedIndexId")List<Long> invertedIndexId);
 }

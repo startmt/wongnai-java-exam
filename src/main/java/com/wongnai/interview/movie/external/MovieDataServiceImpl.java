@@ -35,11 +35,17 @@ public class MovieDataServiceImpl implements MovieDataService {
 		objectMapper = new ObjectMapper();
         URL url = null;
         try {
+            //Change string to url
             url = new URL(MOVIE_DATA_URL);
+
+            //get Data in list from url
             MovieData[] movieDataObjects = objectMapper.readValue(url, MovieData[].class);
+
+            //Change to arrays
             ArrayList<MovieData> movieDataArrayList = new ArrayList<MovieData>(Arrays.asList(movieDataObjects));
             MoviesResponse moviesResponse = new MoviesResponse(movieDataArrayList);
             return moviesResponse;
+
         } catch (IOException e) {
             e.printStackTrace();
         }

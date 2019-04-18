@@ -27,6 +27,8 @@ public class MovieDataSynchronizer {
 	}
 
 	private void initdatatodb() {
+
+	    //init data to database (I setup in application.properties)
 		ArrayList<MovieData> datas = movieDataService.fetchAll();
 		movieRepository.deleteAll();
 		datas.forEach(

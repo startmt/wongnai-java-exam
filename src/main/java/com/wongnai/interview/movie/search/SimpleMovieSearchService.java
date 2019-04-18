@@ -28,6 +28,7 @@ public class SimpleMovieSearchService implements MovieSearchService {
 		//search algorithm
 		for (MovieData movieData : movieDataService.fetchAll()){
 		    String[] titleSplit = movieData.getTitle().split(" ");
+
 		    // for in titlesplit
             for(String splitText : titleSplit){
                 if(splitText.toLowerCase().equals(queryText.toLowerCase())){
