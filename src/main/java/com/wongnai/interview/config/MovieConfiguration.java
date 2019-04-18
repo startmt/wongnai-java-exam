@@ -40,7 +40,7 @@ public class MovieConfiguration {
                 wordMap.get(word).add(movie.getId());
             }
         }
-        System.out.println(wordMap);
+        System.out.println("Create Inverted index map");
         return  wordMap;
     }
 }
