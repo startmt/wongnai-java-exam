@@ -30,6 +30,7 @@ public class MovieDataServiceImpl implements MovieDataService {
 		// Please noted that you must only read data remotely and only from given source,
 		// do not download and use local file or put the file anywhere else.
 
+
 		//init Object
 		objectMapper = new ObjectMapper();
         URL url = null;
